@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+  <title>Compare Prices</title>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href= "/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/jquery-3.0.0.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $("#xxx").hide();
+    $("#yyy").hide();
+    $("#btn111").click(function(){
+      
+      $.ajax({
+            method:"GET",
+            url: "http://127.0.0.1:8000/KaymuapiView/"+$("#searchitem1").val(),
+            dataType: "json",
+            success: function(results){
+              $("#xxx").empty();
+              $("#xxx").show();
+               for (var key in results) {
+
+                 $("#xxx").append("<div><a><b> "+key+"</b></a>" +": रू. " +results[key][0] +"<br><br></div><vr>");
+                 $("#xxx div").hide();
+                 $("#xxx div").show(1500);
+                 $("#xxx a:last").attr("href","http://127.0.0.1:8000/viewspecs"+results[key][1]);
+                 // $("#xxx div").css("text-align","center");
+                 $("#xxx div").css("padding-top","30px");
+}   
+            }
+
+
+});
+return false;
+    });
+
+    $("#btn222").click(function(){
+      
+      $.ajax({
+            method:"GET",
+            url: "http://127.0.0.1:8000/SastoapiView/"+$("#searchitem2").val(),
+            dataType: "json",
+            success: function(results){
+              $("#yyy").empty();
+              $("#yyy").show();
+               for (var key in results) {
+
+                 $("#yyy").append("<div><a><b> "+key+"</b></a>" +": " +results[key][0] +"<br><br></div><vr>");
+                 $("#yyy div").hide();
+                 $("#yyy div").show(1500);
+                 $("#yyy a:last").attr("href","http://127.0.0.1:8000/viewspecs"+results[key][1]);
+                 // $("#xxx div").css("text-align","center");
+                 $("#yyy div").css("padding-top","30px");
+}   
+            }
+
+
+});
+return false;
+    });
+
+
+  });
+  </script>
+
+
+<style>
+
+a{
+  text-decoration: none;
+  font-family:Montserrat;
+  color:black;
+}
+a:hover{
+  text-decoration: none;
+}
+
+
+.navbar{
+background-color:#333332;
+font-family: Montserrat;
+}
+
+ul li:hover{
+  background-color:#f76762;
+}
+
+
+.jumbotron {
+    background-color: #1352a2; /* Orange */
+    color: #ffffff;
+    padding: 70px 25px;
+    font-family: Montserrat, sans-serif;
+}
+.row{
+  padding:30px 180px;
+}
+
+
+</style>  
+</head>
+
+<body style="background-color:#f0f1ee;">
+<nav class="navbar navbar-inverse"">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="http://127.0.0.1:8000">Moogle</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a href="http://127.0.0.1:8000">Home</a></li>
+    <li><a href="#">Compare Specs</a></li>
+    <li ><a href="#">Compare Prices</a></li>
+    <li><a href="#">Latest News</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">About Us</a></li>
+      <li><a href="#"> Contact</a></li>
+    </ul>
+  </div>
+ </nav>
+
+<div class="row">
+<div class="col-lg-6">
+
+<div class="" style="">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <input type="text" id="searchitem1" class="form-control" placeholder="kaymu.co.np">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="btn111"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+</div>
+
+<div class="row" style="padding:31px;">
+  <div class ="well" style="height:500px;background-color:lavender;"><div id="xxx" style="overflow:scroll;margin-top:0px;height:470px;"></div></div>
+</div>
+
+ </div>
+<div class="col-lg-6" style="border-left:1px #000000 solid; height:550px;">
+
+<div class="" style="">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="sastodeals.com" id="searchitem2">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="btn222"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+</div>
+<div class="row" style="padding:31px;">
+  <div class ="well" style="height:500px;background-color:lavender"><div id="yyy" style="overflow:scroll;margin-top:0px;height:470px;"></div></div>
+</div>
+ </div>
+</div>
+
+
+</body>
+</html>

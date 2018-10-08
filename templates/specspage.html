@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Specifications</title>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href= "/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/jquery-3.0.0.min.js"></script>
+  
+<title>SPECS</title>
+</head>
+<body style="background-color:lavender;font-family: Montserrat;">
+
+<nav class="navbar navbar-inverse"">
+ 	<div class="container-fluid">
+ 	<div class="navbar-header">
+ 		<a class="navbar-brand" href="#">Moogle</a>
+ 	</div>
+ 	<ul class="nav navbar-nav">
+ 		<li><a href="#">Home</a></li>
+ 		<li><a href="#">Compare Specs</a></li>
+ 		<li><a href="#">Compare Prices</a></li>
+ 		<li><a href="#">Latest News</a></li>
+ 	</ul>
+ 	<ul class="nav navbar-nav navbar-right">
+      <li><a href="#">About Us</a></li>
+      <li><a href="#"> Contact</a></li>
+    </ul>
+ 	</div>
+ </nav>
+
+<div class="container">
+<div>
+	
+	<img src="{{ imgurl }}" class="col-lg-4" style="height:430px;width:370px;">
+	<div class="panel panel-primary col-lg-8">
+	<div class="panel-heading text-center text-uppercase">	<h3>Specifications</h3>	</div>
+	
+	<div class="panel-content text-center" style="height:400px;overflow:scroll;">
+		{% for x in specs %}
+		
+			{{x|striptags|cut:"[]"|cut:"["|cut:"]"|cut:","|cut:"  "|linebreaks}}
+		
+		{% endfor %}
+	</div>
+	</div>	
+</div>
+</div>
+	
+
+
+</body>
+</html>

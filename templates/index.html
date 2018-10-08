@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+	
+<head>
+  <title>Welcome</title>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href= "/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/jquery-3.0.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#comparebtn").click(function(){
+  location.href="http://127.0.0.1:8000/kaymuscrape";
+});
+
+
+});
+</script>
+
+<style>
+
+.navbar{
+background-color:#333332;
+font-family: Montserrat;
+}
+
+ul li:hover{
+	background-color:#f76762;
+}
+
+
+.jumbotron {
+    background-color: #1352a2; /* Orange */
+    color: #ffffff;
+    padding: 70px 25px;
+    font-family: Montserrat, sans-serif;
+}
+.row{
+	padding:30px 180px;
+}
+
+.glyphicon {
+    font-size: 200px;
+}
+</style>  
+</head>
+<body style="background-color:lavender;font-family: Montserrat;" >
+<div class="ro">
+<nav class="navbar navbar-inverse col-lg-12" style="margin-bottom:0px">
+ 	<div class="navbar-header">
+ 		<a class="navbar-brand" href="#">MOOGLE</a>
+ 	</div>
+ 	<ul class="nav navbar-nav">
+ 		<li><a href="#">Home</a></li>
+ 		<li><a href="#">Compare Specs</a></li>
+ 		<li><a href="http://127.0.0.1:8000/kaymuscrape">Compare Prices</a></li>
+ 		<li><a href="#">Latest News</a></li>
+ 	</ul>
+ 	<ul class="nav navbar-nav navbar-right">
+      <li><a href="#">About Us</a></li>
+      <li><a href="#"> Contact</a></li>
+    </ul>
+
+
+ </nav>
+  <div class="jumbotron text-center col-lg-12">
+    <h1 style="font-family:comic sans ms;font-size:120px;"><stong>Mooogle</strong></h1>
+	<p>Find your dream phone</p>
+  </div>
+
+<div class="container-fluid" style="background-color:#f0f1ee">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Looking to compare prices?</h2>
+      <h4>Begin</h4>      
+      <p>Compare Prices from Kaymu and sastodeals..</p>
+      <button class="btn btn-default btn-lg" id="comparebtn">Get Started</button>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon glyphicon-usd"></span>
+    
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-phone"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Better processor or better camera?</h2>
+      <h4>Why not both..</h4>
+      <p>Compare specs</p>
+      <button class="btn btn-default btn-lg">Begin</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color:#f0f1ee">
+  <div class="row">
+   
+    <div class="col-sm-8">
+      <h3>Contact Us:</h3>
+      Arpan Kc<br>
+      Rabin Joshi<br>
+      Monika Subedi<br>
+      Shauharda Chettri<br>
+      Sandesh Thapa<br>
+      Phone no.:9860771170<br>
+      Email Id: khatrakonilimithunchani@gmail.com<br>
+
+    </div>
+  </div>
+</div>
+
+</body>
+
+
+
+</html>
